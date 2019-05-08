@@ -26,4 +26,5 @@ export default class Wallet extends React.Component {
       </View>
     );
   }
-} 
+}
+
