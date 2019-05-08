@@ -3,16 +3,16 @@ import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import Profile from '../screens/Profile/Profile';
+import Wallet from '../screens/Wallet/Wallet';
+import Transactions from '../screens/Transactions/Transactions';
 
-const HomeStack = createStackNavigator({
-  Home: HomeScreen,
+const WalletStack = createStackNavigator({
+  Wallet: Wallet,
 });
 
-HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+WalletStack.navigationOptions = {
+  tabBarLabel: 'Wallet',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -25,12 +25,12 @@ HomeStack.navigationOptions = {
   ),
 };
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
+const TransactionsStack = createStackNavigator({
+  Transactions: Transactions,
 });
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+TransactionsStack.navigationOptions = {
+  tabBarLabel: 'Transactions',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -39,12 +39,12 @@ LinksStack.navigationOptions = {
   ),
 };
 
-const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
+const ProfileStack = createStackNavigator({
+  Profile: Profile,
 });
 
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+ProfileStack.navigationOptions = {
+  tabBarLabel: 'Profile',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -54,7 +54,7 @@ SettingsStack.navigationOptions = {
 };
 
 export default createBottomTabNavigator({
-  HomeStack,
-  LinksStack,
-  SettingsStack,
+  WalletStack,
+  TransactionsStack,
+  ProfileStack,
 });
